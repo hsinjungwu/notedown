@@ -1,4 +1,25 @@
-notedown
+NoteDown
 ========
 
-簡易筆記本
+A simple notepad for myself.
+
+##How to Use
+
+1. Write your note in [markdown][^1] (sample `notedown.md` maybe help)
+2. Save it in the folder of **notedown.exe** and name it as *notedown.md* 
+3. Run **notedown.exe**
+
+[^1]: http://daringfireball.net/projects/markdown/ 
+
+##Feature
+
+* HotKey
+** `ctrl` + `S` : Save File
+** `Esc` : Close Application (errrrr... only right part is focused, maybe fixed some day)
+* Click treenode of left side, the header will be highlight
+* Keyword will be highlight (errrrr... I only add `int`, `double` and `decimal`)
+* Markdown format will be highlight(errrrr, only for [#]Header1, [##]Header2, [**]bolid[**], [*]italic[*], [`]plaintext[`])
+
+##Future Work
+
+Maybe no future..... lol
