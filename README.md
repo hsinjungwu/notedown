@@ -1,7 +1,7 @@
 NoteDown
 ========
 
-A simple notepad for myself.
+A simple editor for myself.
 
 ##How to Use
 
@@ -13,12 +13,13 @@ A simple notepad for myself.
 
 ##Feature
 
-* HotKey
-** `ctrl` + `S` : Save File
-** `Esc` : Close Application (errrrr... only right part is focused, maybe fixed some day)
-* Click treenode of left side, the header will be highlight
-* Keyword will be highlight (errrrr... I only add `int`, `double` and `decimal`)
-* Markdown format will be highlight(errrrr, only for [#]Header1, [##]Header2, [**]bolid[**], [*]italic[*], [`]plaintext[`])
+- HotKey
+    - `ctrl` + `S` : Save File
+    - `Esc` : Close Application (errrrr... only right part is focused, maybe fixed some day)
+- Highlight
+    - Click treenode of left side, the header will be trigger
+    - Keyword (errrrr... I only add `int`, `double` and `decimal`)
+    - Markdown format (errrrr, only for `#Header1`, `##Header2`, `**bolid**`, `*italic*`, ```plaintext```)
 
 ##Future Work
 
