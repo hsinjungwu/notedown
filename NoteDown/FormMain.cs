@@ -32,6 +32,7 @@ namespace NoteDown
             Content.Multiline = true;
             Content.WordWrap = true;
             Content.BackColor = SolarizedColors.BackGroundColor;
+            Content.ForeColor = SolarizedColors.Default;
             this.WindowState = FormWindowState.Maximized;
             TreeViewList.Width = 300;
         }
@@ -62,6 +63,7 @@ namespace NoteDown
         {
             string text = Content.Text;
             int start = 0;
+            bool isCodeBlock = false;
             for (int index = 0; index < text.Length; index++)
             {
                 if (text[index] == (char)10)
@@ -73,15 +75,22 @@ namespace NoteDown
                     if (start > 0 && text[start] == '#' && text[start - 1] != (char)32) continue;
                     else Content.Select(start, index - start);
                 }
+                else if (text[index] == ';')
+                {
+                    Content.Select(start, index - start);
+                }
                 else if (index == text.Length - 1)
                 {
                     Content.Select(start, index + 1 - start);
                 }
                 else continue;
-                Content.SelectionColor = SolarizedColors.GetHightightColor(Content.SelectedText);
+                if (Content.SelectedText == "```") isCodeBlock = !isCodeBlock;
+                Content.SelectionColor = SolarizedColors.GetHightightColor(Content.SelectedText, isCodeBlock);
                 Content.SelectionFont = Markup.GetFont(Content.SelectedText);
                 start = index + 1;
             }
+            Content.Select(text.Length, 0);
+            Content.SelectionColor = SolarizedColors.Default;
         }
 
         private void SetHotKeyOnContent(KeyEventArgs e)
