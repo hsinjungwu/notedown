@@ -20,21 +20,21 @@ namespace NoteDown
         private void FormMain_Load(object sender, EventArgs e)
         {
             LoadTreeView();
+
             TreeViewList.NodeMouseClick += (sv, ev) => HighlightContent(ev.Node);
             Content.KeyDown += (sv, ev) => SetHotKeyOnContent(ev);
             ReadConfig();
             SyntaxHighlight();
         }
 
-        //TODO : Some Default Setting
         private void ReadConfig()
         {
             Content.Multiline = true;
             Content.WordWrap = true;
             Content.BackColor = SolarizedColors.BackGroundColor;
-            Content.ForeColor = SolarizedColors.Default;
+            Content.ForeColor = SolarizedColors.ForeColor;
             this.WindowState = FormWindowState.Maximized;
-            TreeViewList.Width = 300;
+            TreeViewList.Width = 200;
         }
 
         private void LoadTreeView()
@@ -47,6 +47,8 @@ namespace NoteDown
                 AddNodeOnTreeView(line);
             }
             TreeViewList.ExpandAll();
+            TreeViewList.BackColor = SolarizedColors.LightBackGroundColor;
+            TreeViewList.ForeColor = SolarizedColors.LightForeColor;
         }
 
         private void HighlightContent(TreeNode currentNode)
@@ -55,7 +57,7 @@ namespace NoteDown
             Content.SelectionBackColor = SolarizedColors.BackGroundColor;
             Content.SelectionStart = Content.Text.IndexOf(currentNode.Text);
             Content.SelectionLength = currentNode.Text.Length;
-            Content.SelectionBackColor = Color.White;
+            Content.SelectionBackColor = SolarizedColors.LightBackGroundColor;
             Content.ScrollToCaret();
         }
 
@@ -77,6 +79,7 @@ namespace NoteDown
                 }
                 else if (text[index] == ';')
                 {
+                    if (text[start] == '*' || text[start] == '_' || text[start] == '`') continue;
                     Content.Select(start, index - start);
                 }
                 else if (index == text.Length - 1)
@@ -90,7 +93,7 @@ namespace NoteDown
                 start = index + 1;
             }
             Content.Select(text.Length, 0);
-            Content.SelectionColor = SolarizedColors.Default;
+            Content.SelectionColor = SolarizedColors.ForeColor;
         }
 
         private void SetHotKeyOnContent(KeyEventArgs e)

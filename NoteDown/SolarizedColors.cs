@@ -10,7 +10,9 @@ namespace NoteDown
     internal static class SolarizedColors
     {
         public static Color BackGroundColor = GetColor("#002b36");
-        public static Color Default = GetColor("#93a1a1");
+        public static Color ForeColor = GetColor("#839496");
+        public static Color LightBackGroundColor = GetColor("#fdf6e3");
+        public static Color LightForeColor = GetColor("#657b83");
         private static Color yellow = GetColor("#b58900");
         private static Color orange = GetColor("#cb4b16");
         private static Color red = GetColor("#dc322f");
@@ -28,7 +30,7 @@ namespace NoteDown
 
         public static Color GetHightightColor(string s, bool isCodeBlock)
         {
-            if (string.IsNullOrEmpty(s)) return SolarizedColors.Default;
+            if (string.IsNullOrEmpty(s)) return SolarizedColors.ForeColor;
             if (isCodeBlock)
             {
                 if (Markup.IsNumber(s)) return SolarizedColors.blue;
@@ -39,7 +41,7 @@ namespace NoteDown
 
                 if (CsKeyWordList.Contains(s)) return SolarizedColors.green;
                 else if (SqlKeyWordList.Contains(s)) return SolarizedColors.magenta;
-                else return SolarizedColors.Default;
+                else return SolarizedColors.ForeColor;
             }
             else return GetHightightColorByTag(s);
         }
@@ -65,7 +67,7 @@ namespace NoteDown
                     return SolarizedColors.cyan;
 
                 default:
-                    return SolarizedColors.Default;
+                    return SolarizedColors.ForeColor;
             }
         }
 

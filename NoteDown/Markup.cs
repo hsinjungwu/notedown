@@ -17,9 +17,9 @@ namespace NoteDown
             else if (Regex.IsMatch(s, @"^#{2}[^#]")) return MarkdownTag.SecondHeader;
             else if (Regex.IsMatch(s, @"^\*{2}[^*]+\*{2}$")) return MarkdownTag.Bold;
             else if (Regex.IsMatch(s, @"^_{2}[^_]+_{2}$")) return MarkdownTag.Bold;
-            else if (Regex.IsMatch(s, @"^\*[^*]\*$")) return MarkdownTag.Italic;
-            else if (Regex.IsMatch(s, @"^_[^_]_$")) return MarkdownTag.Italic;
-            else if (Regex.IsMatch(s, @"^`[^`]`$")) return MarkdownTag.PlainText;
+            else if (Regex.IsMatch(s, @"^\*[^*]+\*$")) return MarkdownTag.Italic;
+            else if (Regex.IsMatch(s, @"^_[^_]+_$")) return MarkdownTag.Italic;
+            else if (Regex.IsMatch(s, @"^`[^`]+`$")) return MarkdownTag.PlainText;
             else return MarkdownTag.None;
         }
 

@@ -35,20 +35,21 @@
             // TreeViewList
             // 
             this.TreeViewList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TreeViewList.Indent = 10;
             this.TreeViewList.Location = new System.Drawing.Point(0, 0);
             this.TreeViewList.Name = "TreeViewList";
-            this.TreeViewList.Size = new System.Drawing.Size(121, 412);
+            this.TreeViewList.Size = new System.Drawing.Size(127, 412);
             this.TreeViewList.TabIndex = 0;
             // 
             // Content
             // 
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Content.Location = new System.Drawing.Point(121, 0);
+            this.Content.Location = new System.Drawing.Point(127, 0);
             this.Content.Name = "Content";
-            this.Content.Size = new System.Drawing.Size(780, 412);
+            this.Content.Size = new System.Drawing.Size(774, 412);
             this.Content.TabIndex = 3;
-            this.Content.Text = "";            
+            this.Content.Text = "";
             // 
             // FormMain
             // 
@@ -58,7 +59,7 @@
             this.Controls.Add(this.Content);
             this.Controls.Add(this.TreeViewList);
             this.Name = "FormMain";
-            this.Text = "NoteDown";            
+            this.Text = "NoteDown";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
 
