@@ -3,7 +3,7 @@ NoteDown
 
 A simple editor for myself.
 
-##How to Use
+## How to Use
 
 1. Write your note in [markdown][^1] (sample `notedown.md` maybe help)
 2. Save it in the folder of **notedown.exe** and name it as *notedown.md* 
@@ -11,7 +11,7 @@ A simple editor for myself.
 
 [^1]: http://daringfireball.net/projects/markdown/ 
 
-##Feature
+## Feature
 
 - HotKey
     - `ctrl` + `S` : Save File
@@ -21,6 +21,6 @@ A simple editor for myself.
     - Keyword (errrrr... I only add `int`, `double` and `decimal`)
     - Markdown format (errrrr, only for `#Header1`, `##Header2`, `**bolid**`, `*italic*`, ```plaintext```)
 
-##Future Work
+## Future Work
 
 Maybe no future..... lol
